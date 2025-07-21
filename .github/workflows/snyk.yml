@@ -34,9 +34,6 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Build project
-      run: dotnet build
-
     - name: Cache Snyk
       id: cache-snyk
       uses: actions/cache@v4
@@ -55,7 +52,7 @@ jobs:
     - name: Snyk scan
       continue-on-error: true
       run: |
-        cd src
+        dotnet build
         ~/snyk auth ${{ secrets.SNYK_TOKEN }}
         ~/snyk config set org=3b6229b4-e0fe-405e-8283-ac41405bf85c
         ~/snyk test --all-projects

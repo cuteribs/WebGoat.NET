@@ -39,5 +39,5 @@ jobs:
         ~/snyk config set org=3b6229b4-e0fe-405e-8283-ac41405bf85c
         ~/snyk test --all-projects || true
         ~/snyk monitor --all-projects || true
-        ~/snyk code test --report --project-name="WebGoat.NET" || true
+        ~/snyk code test --report --project-name="WebGoatNET" || true
         

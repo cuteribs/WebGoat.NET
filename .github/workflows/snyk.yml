@@ -21,10 +21,6 @@ name: Snyk Security
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
-
 jobs:
   snyk_scan:
     runs-on: ubuntu-latest

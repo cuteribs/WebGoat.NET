@@ -42,7 +42,6 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        shell: powershell
         run: |
           ~/sonar\scanner\dotnet-sonarscanner begin /k:"cuteribs_WebGoat.NET" /o:"cuteribs" /d:sonar.token=$SONAR_TOKEN /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
